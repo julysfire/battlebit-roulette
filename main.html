@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/styles.css" />
+  <script type="text/javascript" src="scripts.js"></script>
+
+  <title>Battlebit Remastered Weapon Roulette</title>
+  <link rel="icon" type="image/x-icon" href="imgs/favicon.ico">
+</head>
+
+<body>
+  <div id="buttonHolder" class = "buttonHolder">
+    <button class="button-sty" id="getRandomButt" onclick="getRandomLoadout()">Get Random Loadout</button>
+  </div>
+
+  <p id="spacer"></p>
+
+  <div id="optionsHeaders1" class="optionsHeaders1">
+    <h3>Options</h3>
+  </div>  
+  <div id="optionsHeaders2" class="optionsHeaders2">
+    <h5>Select weapon classes you want to include in the randomzier.</h5>
+  </div>
+
+
+  <div class="optionsOuter">
+    <!--
+    <div class="optionsDiv">
+      <div class="optionsText">
+        <label class="optionsInnerLabel">Assault</label>
+        <label class="switch">
+          <input type="checkbox" id="assaultCheck" checked="true">
+          <span class="slider round"></span>
+        </label>
+      </div>
+
+      <div class="optionsText">
+        <label class="optionsInnerLabel">Medic</label>
+        <label class="switch">
+          <input type="checkbox" id="medicCheck" checked="true">
+          <span class="slider round"></span>
+        </label>
+      </div>
+
+      <div class="optionsText">
+        <label class="optionsInnerLabel">Engineer</label>
+        <label class="switch">
+          <input type="checkbox" id="EngineerCheck" checked="true">
+          <span class="slider round"></span>
+        </label>
+      </div>
+
+      <div class="optionsText">
+        <label class="optionsInnerLabel">Support</label>
+        <label class="switch">
+          <input type="checkbox" id="supportCheck" checked="true">
+          <span class="slider round"></span>
+        </label>
+      </div>
+
+      <div class="optionsText">
+        <label class="optionsInnerLabel">Recon</label>
+        <label class="switch">
+          <input type="checkbox" id="reconCheck" checked="true">
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </div>
+    -->
+    <div class="optionsDiv">
+      <div class="optionsText">
+        <label class="optionsInnerLabel">Assault Rifle</label>
+        <label class="switch">
+          <input type="checkbox" id="arCheck" checked="true">
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <div class="optionsText">
+        <label class="optionsInnerLabel">SMG</label>
+        <label class="switch">
+          <input type="checkbox" id="smgCheck" checked="true">
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <div class="optionsText">
+        <label class="optionsInnerLabel">PDW</label>
+        <label class="switch">
+          <input type="checkbox" id="pdwCheck" checked="true">
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <div class="optionsText">
+        <label class="optionsInnerLabel">Carbine</label>
+        <label class="switch">
+          <input type="checkbox" id="carbineCheck" checked="true">
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <div class="optionsText">
+        <label class="optionsInnerLabel">Light Support</label>
+        <label class="switch">
+          <input type="checkbox" id="lsgCheck" checked="true">
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <div class="optionsText">
+        <label class="optionsInnerLabel">LMG</label>
+        <label class="switch">
+          <input type="checkbox" id="lmgCheck" checked="true">
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <div class="optionsText">
+        <label class="optionsInnerLabel">DMR</label>
+        <label class="switch">
+          <input type="checkbox" id="dmrCheck" checked="true">
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <div class="optionsText">
+        <label class="optionsInnerLabel">Sniper</label>
+        <label class="switch">
+          <input type="checkbox" id="sniperCheck" checked="true">
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+
+  <p id="spacer"></p>
+  <img src="/imgs/you-get-nothing.gif" alt="" class="wepImg" id="nothingImg" hidden="true">
+  <div class="wepHolder" id="mainWepHolder" hidden="true">
+    <img src="" alt="" class="wepImg" id="mainWepImg">
+    <div class="randomWepMain" id="randomWepMain"></div>
+    <div class="randomWepMain" id="randomMainScopes"></div>
+    <div class="randomWepMain" id="randomMainCanted"></div>
+    <div class="randomWepMain" id="randomMainTop"></div>
+    <div class="randomWepMain" id="randomMainBarrel"></div>
+    <div class="randomWepMain" id="randomMainGrip"></div>
+    <div class="randomWepMain" id="randomMainSide"></div>
+    <div class="randomWepMain" id="randomMainMag"></div>
+    <div class="randomWepMain" id="randomMainBolt"></div>
+  </div>
+  <p id="spacer"></p>
+
+  <div class="wepHolder" id="secWepHolder" hidden="true">
+    <img src="" alt="" class="wepImg" id="secWepImg">
+    <div class="randomWepSec" id="randomWepSec"></div>
+    <div class="randomWepSec" id="randomSecScope"></div>
+    <div class="randomWepSec" id="randomSecBarrel"></div>
+    <div class="randomWepSec" id="randomSecSide"></div>
+    <div class="randomWepSec" id="randomSecMag"></div>
+  </div>
+</body>
+
+</html>
