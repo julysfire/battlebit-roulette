@@ -10,7 +10,7 @@
         "sniper":["SSG 69", "SV-98", "L96", "Rem700", "M200", "MSR"]
     },
      "secondary_weps": ["M9", "MP 443", "USP", "Glock 18", "Unica", "Desert Eagle", "RSH12"],
-    "scopes_id": ["iron", "short", "medium", "long"],
+    "scopes_id": ["iron", "short", "medium", "long", "short", "medium", "long"],
     "scopes_main": {
         "iron": "None",
         "short": ["Aim Comp", "Holographic", "Kobra", "D K P7", "P K- A S", "Red Dot", "Reflex", "Strikefire", "Razor", "F You", "Holo P K-120", "H S401 G5"],

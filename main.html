@@ -15,66 +15,25 @@
 
 <body>
   <div id="buttonHolder" class = "buttonHolder">
-    <button class="button-sty" id="getRandomButt" onclick="getRandomLoadout()">Get Random Loadout</button>
+    <div id="mainRandomButt">
+      <button class="button-sty" id="getRandomButt" onclick="getRandomLoadout()">Get Random Loadout</button>
+    </div>
+    <div id="indivRerollButts">
+      <button class="button-sty-small" id="rerollMainButt" disabled="true" onclick="rerollMain()">Reroll Main Weapon</button>
+      <button class="button-sty-small" id="rerollSecButt" disabled="true" onclick="rerollSec()">Reroll Secondary Weapon</button>
+    </div>
   </div>
 
   <p id="spacer"></p>
 
-  <div id="optionsHeaders1" class="optionsHeaders1">
-    <h3>Options</h3>
-  </div>  
   <div id="optionsHeaders2" class="optionsHeaders2">
-    <h5>Select weapon classes you want to include in the randomzier.</h5>
+    <a>Select weapon classes you want to include in the randomzier.</a>
   </div>
 
-
   <div class="optionsOuter">
-    <!--
     <div class="optionsDiv">
       <div class="optionsText">
-        <label class="optionsInnerLabel">Assault</label>
-        <label class="switch">
-          <input type="checkbox" id="assaultCheck" checked="true">
-          <span class="slider round"></span>
-        </label>
-      </div>
-
-      <div class="optionsText">
-        <label class="optionsInnerLabel">Medic</label>
-        <label class="switch">
-          <input type="checkbox" id="medicCheck" checked="true">
-          <span class="slider round"></span>
-        </label>
-      </div>
-
-      <div class="optionsText">
-        <label class="optionsInnerLabel">Engineer</label>
-        <label class="switch">
-          <input type="checkbox" id="EngineerCheck" checked="true">
-          <span class="slider round"></span>
-        </label>
-      </div>
-
-      <div class="optionsText">
-        <label class="optionsInnerLabel">Support</label>
-        <label class="switch">
-          <input type="checkbox" id="supportCheck" checked="true">
-          <span class="slider round"></span>
-        </label>
-      </div>
-
-      <div class="optionsText">
-        <label class="optionsInnerLabel">Recon</label>
-        <label class="switch">
-          <input type="checkbox" id="reconCheck" checked="true">
-          <span class="slider round"></span>
-        </label>
-      </div>
-    </div>
-    -->
-    <div class="optionsDiv">
-      <div class="optionsText">
-        <label class="optionsInnerLabel">Assault Rifle</label>
+        <label class="optionsInnerLabel2line">Assault Rifle</label>
         <label class="switch">
           <input type="checkbox" id="arCheck" checked="true">
           <span class="slider round"></span>
@@ -95,14 +54,14 @@
         </label>
       </div>
       <div class="optionsText">
-        <label class="optionsInnerLabel">Carbine</label>
+        <label class="optionsInnerLabel4">Carbine</label>
         <label class="switch">
           <input type="checkbox" id="carbineCheck" checked="true">
           <span class="slider round"></span>
         </label>
       </div>
       <div class="optionsText">
-        <label class="optionsInnerLabel">Light Support</label>
+        <label class="optionsInnerLabel2line">Light Support</label>
         <label class="switch">
           <input type="checkbox" id="lsgCheck" checked="true">
           <span class="slider round"></span>
@@ -123,7 +82,7 @@
         </label>
       </div>
       <div class="optionsText">
-        <label class="optionsInnerLabel">Sniper</label>
+        <label class="optionsInnerLabel3">Sniper</label>
         <label class="switch">
           <input type="checkbox" id="sniperCheck" checked="true">
           <span class="slider round"></span>
@@ -134,28 +93,76 @@
 
 
   <p id="spacer"></p>
-  <img src="/imgs/you-get-nothing.gif" alt="" class="wepImg" id="nothingImg" hidden="true">
+  <img src="/imgs/you-get-nothing.gif" alt="" class="nothingImg" id="nothingImg" hidden="true">
   <div class="wepHolder" id="mainWepHolder" hidden="true">
     <img src="" alt="" class="wepImg" id="mainWepImg">
-    <div class="randomWepMain" id="randomWepMain"></div>
-    <div class="randomWepMain" id="randomMainScopes"></div>
-    <div class="randomWepMain" id="randomMainCanted"></div>
-    <div class="randomWepMain" id="randomMainTop"></div>
-    <div class="randomWepMain" id="randomMainBarrel"></div>
-    <div class="randomWepMain" id="randomMainGrip"></div>
-    <div class="randomWepMain" id="randomMainSide"></div>
-    <div class="randomWepMain" id="randomMainMag"></div>
-    <div class="randomWepMain" id="randomMainBolt"></div>
+    
+    <table class="mainWepTable" id ="mainWepTable">
+      <tr id="mainWepRow">
+        <td class="tdHead">Main Weapon:</td>
+        <td class="tdSub" id="randomWepMain"></td>
+      </tr>
+      <tr id="mainScopeRow">
+        <td class="tdHead">Main Scope:</td>
+        <td class="tdSub" id="randomMainScopes"></td>
+      </tr>
+      <tr id="mainCantedRow">
+        <td class="tdHead">Canted Scope:</td>
+        <td class="tdSub" id="randomMainCanted"></td>
+      </tr>
+      <tr id="mainTopRow">
+        <td class="tdHead">Top Scope:</td>
+        <td class="tdSub" id="randomMainTop"></td>
+      </tr>
+      <tr id="mainBarrelRow">
+        <td class="tdHead">Barrel:</td>
+        <td class="tdSub" id="randomMainBarrel"></td>
+      </tr>
+      <tr id="mainGripRow">
+        <td class="tdHead">Underbarrel Grip:</td>
+        <td class="tdSub" id="randomMainGrip"></td>
+      </tr>
+      <tr id="mainSideRow">
+        <td class="tdHead">Side Rail:</td>
+        <td class="tdSub" id="randomMainSide"></td>
+      </tr>
+      <tr id="mainMagRow">
+        <td class="tdHead">Magazine:</td>
+        <td class="tdSub" id="randomMainMag"></td>
+      </tr>
+      <tr id="mainBoltRow">
+        <td class="tdHead">Bolt:</td>
+        <td class="tdSub" id="randomMainBolt"></td>
+      </tr>
+    </table>
   </div>
   <p id="spacer"></p>
 
-  <div class="wepHolder" id="secWepHolder" hidden="true">
+  <div class="wepHolder2" id="secWepHolder" hidden="true">
     <img src="" alt="" class="wepImg" id="secWepImg">
-    <div class="randomWepSec" id="randomWepSec"></div>
-    <div class="randomWepSec" id="randomSecScope"></div>
-    <div class="randomWepSec" id="randomSecBarrel"></div>
-    <div class="randomWepSec" id="randomSecSide"></div>
-    <div class="randomWepSec" id="randomSecMag"></div>
+
+    <table class="mainWepTable" id ="secWepTable">
+      <tr id="secWepRow">
+        <td class="tdHead">Secondary Weapon:</td>
+        <td class="tdSub" id="randomWepSec"></td>
+      </tr>
+      <tr id="secScopeRow">
+        <td class="tdHead">Scope:</td>
+        <td class="tdSub" id="randomSecScope"></td>
+      </tr>
+      <tr id="secBarrelRow">
+        <td class="tdHead">Barrel:</td>
+        <td class="tdSub" id="randomSecBarrel"></td>
+      </tr>
+      <tr id="secSideRow">
+        <td class="tdHead">Siderail:</td>
+        <td class="tdSub" id="randomSecSide"></td>
+      </tr>
+      <tr id="secMagRow">
+        <td class="tdHead">Magazine:</td>
+        <td class="tdSub" id="randomSecMag"></td>
+      </tr>
+    </table>
   </div>
 </body>
 
