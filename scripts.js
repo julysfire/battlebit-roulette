@@ -29,7 +29,7 @@ function getRandomLoadout(){
     sec_wep = jsonData["secondary_weps"][Math.floor(Math.random() * jsonData["secondary_weps"].length)];
 
     var wepAttachmentsMain = validateWeapon(main_wep, 'main');
-    var wepAttachmentsSec = validateWeapon(main_wep, 'sec');
+    var wepAttachmentsSec = validateWeapon(sec_wep, 'sec');
 
     //Apply all to page
     applyToPage(wepAttachmentsMain, 'main', main_wep);
@@ -323,7 +323,8 @@ function unhideRows(opt){
                 }
             }
         }
-    }else if(opt == 's' || opt == 'b'){
+    }
+    if(opt == 's' || opt == 'b'){
         var wepTableSec = document.getElementById("secWepTable").children[0].children;
         for(var i = 0; i < wepTableSec.length; i++){
             if(wepTableSec[i].tagName == 'TR'){
@@ -346,7 +347,8 @@ function hideRows(opt){
                 }
             }
         }
-    }else if(opt == 's' || opt == 'b'){
+    }
+    if(opt == 's' || opt == 'b'){
         var wepTableSec = document.getElementById("secWepTable").children[0].children;
         for(var i = 0; i < wepTableSec.length; i++){
             if(wepTableSec[i].tagName == 'TR'){
