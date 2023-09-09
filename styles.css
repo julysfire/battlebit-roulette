@@ -68,7 +68,7 @@
 body{
     background-image: url("/imgs/bkg.png");
     font-family: 'Rubik', sans-serif;
-    background-attachment: fixed;
+    background-size: cover;
 }
 
 .optionsText{
