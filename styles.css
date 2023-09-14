@@ -66,7 +66,7 @@
 }
 
 body{
-    background-image: url("/imgs/bkg.png");
+    background-image: url("imgs/bkg.png");
     font-family: 'Rubik', sans-serif;
     background-size: cover;
     overflow-y: hidden;
