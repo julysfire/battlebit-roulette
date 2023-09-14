@@ -87,7 +87,7 @@ function rerollSec(jsonData, validData){
 
     //Get random weapon, validate and attach to page
     var sec_wep = jsonData["secondary_weps"][Math.floor(Math.random() * jsonData["secondary_weps"].length)];
-    var wepAttachmentsSec = validateWeapon(main_wep, 'sec', jsonData, validData);
+    var wepAttachmentsSec = validateWeapon(sec_wep, 'sec', jsonData, validData);
     applyToPage(wepAttachmentsSec, 'sec', sec_wep);
     hideRows('s');
 }
