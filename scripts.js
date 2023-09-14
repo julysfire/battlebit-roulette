@@ -293,7 +293,7 @@ function applyToPage(wepAttachments, wepType, wep_name){
             document.getElementById('randomMainBolt').innerHTML = "";
         }
 
-        document.getElementById('mainWepImg').src = "/imgs/" + wepNameClean + ".png" 
+        document.getElementById('mainWepImg').src = "imgs/" + wepNameClean + ".png" 
     }else{
         //Weapon Name
         document.getElementById('randomWepSec').innerHTML = wep_name;
@@ -310,7 +310,7 @@ function applyToPage(wepAttachments, wepType, wep_name){
         //Mag
         document.getElementById('randomSecMag').innerHTML = wepAttachments[6];
 
-        document.getElementById('secWepImg').src = "/imgs/" + wepNameClean + ".png" 
+        document.getElementById('secWepImg').src = "imgs/" + wepNameClean + ".png" 
     }
 }
 
@@ -362,7 +362,7 @@ function hideRows(opt){
 }
 
 function nothingHere(){
-    document.getElementById("nothingImg").src = "/imgs/you-get-nothing.gif";
+    document.getElementById("nothingImg").src = "imgs/you-get-nothing.gif";
         
     document.getElementById("mainWepHolder").hidden = true;
     document.getElementById("secWepHolder").hidden = true;
