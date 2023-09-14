@@ -14,6 +14,8 @@ function getRandomLoadout(jsonData, validData){
     document.getElementById("secWepHolder").hidden = false;
     document.getElementById("nothingImg").hidden = true;
 
+    easterCheck();
+
     //Unhide
     unhideRows('b');
 
@@ -383,4 +385,25 @@ async function getValid(){
     const response = await fetch('/valid');
     const data = await response.json();
     return JSON.parse(data);
+}
+
+function easterCheck(){
+    var stateCheck = [document.getElementById("arCheck").checked, document.getElementById("smgCheck").checked, document.getElementById("pdwCheck").checked, document.getElementById("carbineCheck").checked, document.getElementById("lsgCheck").checked, document.getElementById("lmgCheck").checked, document.getElementById("dmrCheck").checked, document.getElementById("sniperCheck").checked];
+
+    //Support
+    if(stateCheck[5] == true){
+        if(stateCheck[0] == false && stateCheck[1] == false && stateCheck[2] == false && stateCheck[3] == false && stateCheck[4] == false && stateCheck[6] == false && stateCheck[7] == false){
+            document.getElementById("easterImg").src = "imgs/turtle.png";
+        }else{
+            document.getElementById("easterImg").src = "";
+        }
+    }else if(stateCheck[7] == true){
+        if(stateCheck[0] == false && stateCheck[1] == false && stateCheck[2] == false && stateCheck[3] == false && stateCheck[4] == false && stateCheck[5] == false && stateCheck[6] == false){
+            document.getElementById("easterImg").src = "imgs/glint.png";
+        }else{
+            document.getElementById("easterImg").src = "";
+        }
+    }else{
+        document.getElementById("easterImg").src = "";
+    }
 }

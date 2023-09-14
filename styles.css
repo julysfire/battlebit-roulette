@@ -317,3 +317,10 @@ body{
   height: 35px;
   width: 35px;
 }
+
+.easterHolder{
+  position: absolute;
+  opacity: 80%;
+  bottom: 57%;
+  right: 36%;
+}
