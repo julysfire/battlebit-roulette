@@ -12,7 +12,7 @@
 .wepHolder{
     padding: 1%;
     border: solid 3px;
-    background-color: rgba(225, 225, 225, 0.7);
+    background-color: rgba(225, 225, 225, 0.8);
     width: 40%;    
     position: relative;
     right: -150px;
@@ -37,7 +37,7 @@
   padding-left: 1%;
   padding-right: 1%;
   padding-top: 1%;
-  background-color: rgba(225, 225, 225, 0.7);
+  background-color: rgba(225, 225, 225, 0.8);
   width: 40%;    
   position: relative;
   right: -150px;
@@ -62,14 +62,14 @@
   width: 105px;
   text-align: center;
   border: solid 3px;
-  background-color: rgb(225, 225, 225, 0.7);
+  background-color: rgb(225, 225, 225, 0.8);
 }
 
 body{
-    background-image: url("imgs/bkg.png");
+    background-image: url("imgs/bkg1.png");
     font-family: 'Rubik', sans-serif;
     background-size: cover;
-    overflow-y: hidden;
+    /*overflow-y: hidden;*/
     height: 100%;
     margin: 0;
 }
@@ -138,7 +138,7 @@ body{
     padding-top: 10px;
     border: solid 3px;
     justify-content: center;
-    background-color: rgba(225, 225, 225, 0.7);
+    background-color: rgba(225, 225, 225, 0.8);
 }
 
 /* The switch - the box around the slider */
@@ -308,7 +308,7 @@ body{
   }
 
 .contactDivOuter{
-  position: absolute;
+  position: fixed;
   bottom: 0;
   right: 0;
 }
