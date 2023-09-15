@@ -8,3 +8,5 @@ Get a random loadout including random attachements for Battlebit Remastered.  Tr
 
 ### Issues/Suggestions
 Please feel free to reach out if there are are suggestionr or issues.  I will try to keep my TODO file updated.
+
+###### Please note, Battlebit Remastered and its assets are owned and operated by SgtOkiDoki, Vilaskis, and TheLiquidHorse [Larry].  This site is only a fan-made site.
