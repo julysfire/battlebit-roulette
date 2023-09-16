@@ -375,18 +375,6 @@ function nothingHere(){
     document.getElementById("rerollSecButt").disabled = true;
 }
 
-async function getData(){
-    const response = await fetch('/data');
-    const data = await response.json();
-    return JSON.parse(data);
-}
-
-async function getValid(){
-    const response = await fetch('/valid');
-    const data = await response.json();
-    return JSON.parse(data);
-}
-
 function easterCheck(wep){
     
     
@@ -397,4 +385,10 @@ function easterCheck(wep){
     }else{
         document.getElementById("easterImg").src = "";
     }
+}
+
+//Random background
+function loadFunction(){
+    var bkgImg = "imgs/bkg" + Math.floor(Math.random() * 19) + ".png";
+    document.getElementById("mainBody").style.backgroundImage = "url("+bkgImg+")";
 }

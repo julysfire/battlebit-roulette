@@ -66,7 +66,7 @@
 }
 
 body{
-    background-image: url("imgs/bkg1.png");
+  /*background-image: url("imgs/bkg1.png");*/
     font-family: 'Rubik', sans-serif;
     background-size: cover;
     /*overflow-y: hidden;*/
@@ -314,8 +314,8 @@ body{
 }
 
 .contactImgs{
-  height: 35px;
-  width: 35px;
+  height: 75px;
+  width: 75px;
 }
 
 .easterHolder{
