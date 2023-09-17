@@ -25,11 +25,28 @@ function getRandomLoadout(jsonData, validData){
         return;
     }
 
-    //Get Random weapons
-    main_wep = weaponList[Math.floor(Math.random() * weaponList.length)];
-    sec_wep = jsonData["secondary_weps"][Math.floor(Math.random() * jsonData["secondary_weps"].length)];
+    //Get level and clean input
+    var levelInp = getLevelInput();
 
-    easterCheck(main_wep);
+    //Get Random weapons
+    var main_wep = '';
+    var sec_wep = '';
+
+    while(true){
+        main_wep = weaponList[Math.floor(Math.random() * weaponList.length)];
+        if(unlockLevels[main_wep] <= levelInp){
+            break;
+        }
+    }
+    while(true){
+        sec_wep = jsonData["secondary_weps"][Math.floor(Math.random() * jsonData["secondary_weps"].length)];
+        if(unlockLevels[sec_wep] <= levelInp){
+            break;
+        }
+    }
+
+    easterCheck(main_wep, 'main');
+    easterCheck(sec_wep, 'sec');
 
     var wepAttachmentsMain = validateWeapon(main_wep, 'main', jsonData, validData);
     var wepAttachmentsSec = validateWeapon(sec_wep, 'sec', jsonData, validData);
@@ -76,9 +93,19 @@ function rerollMain(jsonData, validData){
     unhideRows('m');
 
     //Get random weapon, validate and attach to page
-    var main_wep = wepList[Math.floor(Math.random() * wepList.length)];
+    var levelInp = getLevelInput();
+    var main_wep = '';
+    while(true){
+        main_wep = wepList[Math.floor(Math.random() * wepList.length)];
+        if(unlockLevels[main_wep] <= levelInp){
+            break;
+        }
+    }
+    
     var wepAttachmentsMain = validateWeapon(main_wep, 'main', jsonData, validData);
     applyToPage(wepAttachmentsMain, 'main', main_wep);    
+
+    easterCheck(main_wep, 'main');
     hideRows('m');
 }
 
@@ -86,9 +113,20 @@ function rerollSec(jsonData, validData){
     unhideRows('s');
 
     //Get random weapon, validate and attach to page
-    var sec_wep = jsonData["secondary_weps"][Math.floor(Math.random() * jsonData["secondary_weps"].length)];
+    var levelInp = getLevelInput();
+    var sec_wep = '';
+
+    while(true){
+        sec_wep = jsonData["secondary_weps"][Math.floor(Math.random() * jsonData["secondary_weps"].length)];
+        if(unlockLevels[sec_wep] <= levelInp){
+            break;
+        }
+    }
+
     var wepAttachmentsSec = validateWeapon(sec_wep, 'sec', jsonData, validData);
     applyToPage(wepAttachmentsSec, 'sec', sec_wep);
+
+    easterCheck(sec_wep, 'sec');
     hideRows('s');
 }
 
@@ -379,15 +417,35 @@ function nothingHere(){
     document.getElementById("rerollSecButt").disabled = true;
 }
 
-function easterCheck(wep){
-    
-    
-    if(wep == "SSG 69" || wep == "SV-98" || wep == "L96" || wep == "Rem700" || wep == "M200" || wep == "MSR"){
-        document.getElementById("easterImg").src = "imgs/glint.png";
-    }else if(wep == "MG36" || wep == "L86A1" || wep == "M249" || wep == "Ultimax100"){
-        document.getElementById("easterImg").src = "imgs/turtle.png";
+function easterCheck(wep, wep_type){
+    if(wep_type == "main"){
+        if(wep == "SSG 69" || wep == "SV-98" || wep == "L96" || wep == "Rem700" || wep == "M200" || wep == "MSR"){
+            document.getElementById("easterHolder").hidden = false;
+            document.getElementById("easterImg").src = "imgs/glint.png";
+        }else if(wep == "MG36" || wep == "L86A1" || wep == "M249" || wep == "Ultimax100"){
+            document.getElementById("easterHolder").hidden = false;
+            document.getElementById("easterImg").src = "imgs/turtle.png";
+        }else if(wep == "AK74"){
+            document.getElementById("easterHolder").hidden = false;
+            document.getElementById("easterImg").src = "imgs/chimp.gif";
+        }else if(wep == "F2000"){
+            document.getElementById("easterHolder").hidden = false;
+            document.getElementById("easterImg").src = "imgs/f2000brrr.png";
+        }else if(wep == "Honey Badger"){
+            document.getElementById("easterHolder").hidden = false;
+            document.getElementById("easterImg").src = "imgs/hbdgas.png";
+        }else{
+            document.getElementById("easterHolder").hidden = true;
+            document.getElementById("easterImg").src = "";
+        }
     }else{
-        document.getElementById("easterImg").src = "";
+        if (wep == "Unica"){
+            document.getElementById("easterHolder2").hidden = false;
+            document.getElementById("easterImg2").src = "imgs/clint.png";
+        }else{
+            document.getElementById("easterHolder2").hidden = true;
+            document.getElementById("easterImg2").src = "";
+        }
     }
 }
 
@@ -395,4 +453,20 @@ function easterCheck(wep){
 function loadFunction(){
     var bkgImg = "imgs/bkg" + Math.floor(Math.random() * 19) + ".png";
     document.getElementById("mainBody").style.backgroundImage = "url("+bkgImg+")";
+}
+
+function getLevelInput(){
+    var levelInp = parseInt(document.getElementById("levelInput").value);
+    
+    if(isNaN(levelInp)) levelInp = 200;
+    if(levelInp>200){
+        document.getElementById("levelInput").value = 200;
+        levelInp = 200;
+    }
+    if(levelInp<0){
+        document.getElementById("levelInput").value = 0;
+        levelInp = 0;
+    }
+
+    return levelInp;
 }

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  
+
 <!-- Made by https://github.com/julysfire -->
 
 <head>
@@ -17,21 +17,36 @@
 </head>
 
 <body id="mainBody" onload="loadFunction()">
-  <div id="buttonHolder" class = "buttonHolder">
+
+  <div id="buttonHolder" class="buttonHolder">
     <div id="mainRandomButt">
       <button class="button-sty" id="getRandomButt" onclick="startRandom('new')">Get Random Loadout</button>
     </div>
     <div id="indivRerollButts">
-      <button class="button-sty-small" id="rerollMainButt" disabled="true" onclick="startRandom('first')">Reroll Main Weapon</button>
-      <button class="button-sty-small" id="rerollSecButt" disabled="true" onclick="startRandom('second')">Reroll Secondary Weapon</button>
+      <button class="button-sty-small" id="rerollMainButt" disabled="true" onclick="startRandom('first')">Reroll
+        Main Weapon</button>
+      <button class="button-sty-small" id="rerollSecButt" disabled="true" onclick="startRandom('second')">Reroll
+        Secondary Weapon</button>
+    </div>
+
+    <p id="spacer"></p>
+
+    <div class="levelDivOuter">
+      <a>Optional: Enter your level (Blank = 200) </a>
+      <input id="levelInput" class="levelInput" type="number" min="0" max="200" />
     </div>
   </div>
 
-  <div class="easterHolder" id="easterHolder">
+  <p id="spacer"></p>
+
+  <div class="easterHolder" id="easterHolder" hidden="true">
     <img src="" alt="" class="easterImg" id="easterImg">
   </div>
+  <div class="easterHolder2" id="easterHolder2" hidden="true">
+    <img src="" alt="" class="easterImg" id="easterImg2">
+  </div>
 
-  <p id="spacer"></p>
+
 
   <div id="optionsHeaders2" class="optionsHeaders2">
     <a>Select weapon classes you want to include in the randomzier.</a>
@@ -103,8 +118,8 @@
   <img alt="" class="nothingImg" id="nothingImg" hidden="true">
   <div class="wepHolder" id="mainWepHolder" hidden="true">
     <img src="" alt="" class="wepImg" id="mainWepImg">
-    
-    <table class="mainWepTable" id ="mainWepTable">
+
+    <table class="mainWepTable" id="mainWepTable">
       <tr id="mainWepRow">
         <td class="tdHead">Main Weapon:</td>
         <td class="tdSub" id="randomWepMain"></td>
@@ -148,7 +163,7 @@
   <div class="wepHolder2" id="secWepHolder" hidden="true">
     <img src="" alt="" class="wepImg" id="secWepImg">
 
-    <table class="mainWepTable" id ="secWepTable">
+    <table class="mainWepTable" id="secWepTable">
       <tr id="secWepRow">
         <td class="tdHead">Secondary Weapon:</td>
         <td class="tdSub" id="randomWepSec"></td>
@@ -171,12 +186,14 @@
       </tr>
     </table>
   </div>
-</div>
+  </div>
 
-<div id="contactStuff" class="contactDivOuter">
-  <a href="https://discordapp.com/users/143843549287284747" target="_blank" rel="noopener noreferrer"><img src="imgs/discord.png" alt="" class="contactImgs" id="discordImg"></a>
-  <a href="https://github.com/julysfire" target="_blank" rel="noopener noreferrer"><img src="imgs/github.png" alt="" class="contactImgs" id="gitHubImg"></a>
-</div>
+  <div id="contactStuff" class="contactDivOuter">
+    <a href="https://discordapp.com/users/143843549287284747" target="_blank" rel="noopener noreferrer"><img
+        src="imgs/discord.png" alt="" class="contactImgs" id="discordImg"></a>
+    <a href="https://github.com/julysfire" target="_blank" rel="noopener noreferrer"><img src="imgs/github.png" alt=""
+        class="contactImgs" id="gitHubImg"></a>
+  </div>
 </body>
 
 </html>
