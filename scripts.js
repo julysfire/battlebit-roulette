@@ -166,7 +166,11 @@ function validateWeapon(wep, wep_type, jsonData, validData){
         var topScope = null;
     
         if(mainScopes[1] != null && mainScopes[0] != "Ironsights"){
-            cantedScope = mainScopes[1];
+            if(wep = "F2000" && mainScopes[1] == "Ironsights"){
+                cantedScope = "None";
+            }else{
+                cantedScope = mainScopes[1];
+            }
         }
         if(mainScopes[2] != null && ["1 P78", "Echo", "T R I4 X32", "Burris A R332"].includes(mainScopes[0]) == false){
             topScope = mainScopes[2];
